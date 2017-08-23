@@ -19,12 +19,13 @@ import minimist     from 'minimist';
 
 var argv    = minimist(process.argv.slice(2));
 var prod    = argv.prod || argv.p;
+// var watch   = argv.watch || argv.w; // -> pass watch as an option
 
 var reload  = browserSync.reload;
-var proxy   = 'https://q4u.de';
+// var proxy   = 'https://q4u.de';
 
-const src   = 'src';
-const dist  = 'dist';
+const src   = 'app/src';
+const dist  = 'app/dist';
 const paths = {
   html: {
     src:  src  + '/html/*.html',
@@ -43,8 +44,6 @@ const paths = {
   },
   images: {
     src:  src  + '/img/**/*',
-    cmpr: src  + '/img/',
-    orgn: src  + '/imgOriginals/',
     dest: dist + '/img/'
   },
   copy: {
@@ -96,10 +95,9 @@ export function js() {
 }
 
 // images
-function imgCompress() {
+export function img() {
   return gulp.src(paths.images.src, {since: gulp.lastRun('img')})
     .pipe( plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
-    .pipe( gulp.dest(paths.images.orgn))
     .pipe( imagemin({
       optimizationLevel: 5,
       progressive: true,
@@ -107,18 +105,8 @@ function imgCompress() {
       svgoPlugins: [{cleanupIDs: false}]
     }))
     .pipe( notify('images compressed'))
-    .pipe( gulp.dest(paths.images.cmpr))
-};
-
-function imgCopy () {
-  return gulp.src(paths.images.src)
     .pipe( gulp.dest(paths.images.dest))
-    .pipe( notify('images copied'))
-    .pipe( reload({stream:true}));  
-}
-
-const img = gulp.series(imgCompress, imgCopy);
-export { img }
+};
 
 // copy
 export function copy() {

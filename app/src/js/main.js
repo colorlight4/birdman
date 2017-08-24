@@ -1,17 +1,15 @@
-window.onload = function() {
-  
-  // var HideShowTransition = Barba.BaseTransition.extend({
-  //   start: function() {
-  //     this.newContainerLoading.then(this.finish.bind(this));
-  //   },
+'use strict';
 
-  //   finish: function() {
-  //     document.body.scrollTop = 0;
-  //     this.done();
-  //   }
-  // });
+//=require vendor/jquery-3.2.1.min.js
+//=require vendor/barba.min.js
 
-  // Barba.Pjax.getTransition = function() {
-  //   return HideShowTransition;
-  // };
-};
+$(document).ready(function() {
+
+
+});
+
+$(window).on('load', function() {
+
+
+
+});

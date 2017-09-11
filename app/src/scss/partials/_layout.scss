@@ -1,22 +1,4 @@
-html {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-body {
-  margin: 0;
-  background: pink;
-}
+// dev in general
 
 [id="barba-wrapper"] {
   min-height: 100%;
@@ -26,14 +8,22 @@ body {
 .barba-container {
   min-height: 100vh;
   overflow: auto;
+
+  display: flex;
+
 }
 
-.home {
-  background: #fff;
-  color: #000;
+header {
+  nav {
+    // transform: rotate(90deg);
+  }
 }
 
-.about {
-  background: #000;
-  color: #fff;
+main {
+  display: flex;
+
+  .center {
+    align-self: center;
+    padding: 60px;
+  }
 }

@@ -1,12 +1,17 @@
+* {
+  box-shadow: 0px 0px 1px red;
+}
+
 @import "partials/vars";
 
 @import "partials/script/functions";
 @import "partials/script/mixins";
 @import "partials/script/extends";
 
+@import "partials/global";
 
 @import "partials/layout";
 @import "partials/typo";
 
-@import "partials/page";
+@import "partials/pages";
 @import "partials/nav";

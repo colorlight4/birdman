@@ -2,7 +2,7 @@
   box-shadow: 0px 0px 1px red;
 }
 
-@import "partials/vars";
+@import "partials/script/vars";
 
 @import "partials/script/functions";
 @import "partials/script/mixins";
@@ -13,5 +13,6 @@
 @import "partials/layout";
 @import "partials/typo";
 
-@import "partials/pages";
-@import "partials/nav";
+@import "partials/fixed";
+
+@import "partials/footer";

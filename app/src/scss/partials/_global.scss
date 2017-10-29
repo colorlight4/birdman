@@ -1,10 +1,11 @@
 html {
   box-sizing: border-box;
+  background: $clr;
 }
 
 html,
 body {
-  height: 100%;
+  min-height: 100%;
 }
 
 *,
@@ -15,5 +16,9 @@ body {
 
 body {
   margin: 0;
-  background: pink;
+  background: $lght; 
+}
+
+main,footer {
+  @extend %wrapp;
 }

@@ -9,10 +9,12 @@
 @import "partials/script/extends";
 
 @import "partials/global";
-
-@import "partials/layout";
 @import "partials/typo";
 
 @import "partials/fixed";
-
+@import "partials/thumbs";
 @import "partials/footer";
+
+@import "partials/pages/home";
+@import "partials/pages/about";
+@import "partials/pages/detail";

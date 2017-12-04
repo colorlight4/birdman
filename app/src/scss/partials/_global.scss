@@ -19,6 +19,10 @@ body {
   background: $lght; 
 }
 
-main,footer {
-  @extend %wrapp;
+// main,footer {
+//   @extend %outer;
+// }
+
+main {
+  position: relative;
 }

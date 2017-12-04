@@ -5,7 +5,7 @@ import notify       from 'gulp-notify';
 import gulpIf       from 'gulp-if';
 import imagemin     from 'gulp-imagemin';
 import htmlmin      from 'gulp-htmlmin';
-import cleanCSS     from 'gulp-clean-css';
+import crass     from 'gulp-crass';
 import uglify       from 'gulp-uglify';
 import include      from 'gulp-include';
 import plumber      from 'gulp-plumber';
@@ -19,7 +19,6 @@ import minimist     from 'minimist';
 
 var argv    = minimist(process.argv.slice(2));
 var prod    = argv.prod || argv.p;
-// var watch   = argv.watch || argv.w; // -> pass watch as an option
 
 var reload  = browserSync.reload;
 // var proxy   = 'https://q4u.de';
@@ -73,11 +72,13 @@ export function html() {
 export function styles() {
   return gulp.src(paths.styles.src, {sourcemaps: true})
     .pipe( plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
+    .pipe( sourcemaps.init())
     .pipe( sass())
     .pipe( postcss([
       autoprefixer({ browsers: ['last 2 versions'] })
     ]) )
-    .pipe( gulpIf(prod, cleanCSS()))
+    .pipe( gulpIf(prod, crass()))
+    .pipe( sourcemaps.write())
     .pipe( gulp.dest(paths.styles.dest))
     .pipe( notify('styles passed'))
     .pipe( reload({stream:true}));

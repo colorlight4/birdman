@@ -15,7 +15,6 @@
     "browser-sync": "^2.13.0",
     "del": "^3.0.0",
     "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-clean-css": "^3.0.4",
     "gulp-crass": "^0.2.2",
     "gulp-htmlmin": "^3.0.0",
     "gulp-if": "^2.0.1",
